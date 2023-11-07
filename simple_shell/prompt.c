@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
 
 /**
  * main - prints a prompt.
@@ -8,10 +7,11 @@
  */
 int main()
 {
-	size_t n = 10;
+	size_t buff_size = 0;
 	char *buff = NULL;
 
 	printf("$ ");
-	getline(&buff, &n, stdin);
+	getline(&buff, &buff_size, stdin);
+	free(buff);
 	return (0);
 }
